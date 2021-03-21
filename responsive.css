@@ -173,10 +173,16 @@
     font-size: 20px;
   }
   /* works */
+  .photo-text {
+    left: 0;
+  }
   .offers {
     width: 95%;
     margin: auto;
     text-align: center;
+  }
+  .offer1,
+  .offer3 {
     right: 0;
   }
   .sticky-texts h3 {
@@ -236,7 +242,7 @@
     }
     /* main */
     .title {
-      letter-spacing:0;
+      letter-spacing: 0;
     }
   }
 }
