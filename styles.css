@@ -344,6 +344,7 @@ button:hover {
   outline: none;
   border: none;
   border-bottom: white solid 1px;
+  border-radius:0px;
   margin-bottom: 10px;
   background: rgb(0, 0, 0);
   box-shadow: 0 0 0 400px black inset;
