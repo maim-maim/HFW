@@ -236,7 +236,7 @@
     }
     /* main */
     .title {
-      letter-spacing: 2px;
+      letter-spacing:0;
     }
   }
 }
