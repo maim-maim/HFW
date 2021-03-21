@@ -198,8 +198,24 @@ aside {
 
 /* works */
 /* photo gallery */
+.photo-gallery {
+  height: 830vh;
+  position:relative;
+}
+.gallery-img {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-width: 100%;
+  height: 120vh;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+  opacity: calc(1.8 + var(--viewport-y));
+  transition: opacity 0.3s ease-in;
+}
 .photo-text {
-  position: relative;
+  position: absolute;
+  top:0;
   z-index: 5;
 }
 .offers {
@@ -224,20 +240,6 @@ aside {
 .offers p {
   font-size: 40px;
   letter-spacing: 0.08em;
-}
-.photo-gallery {
-  height: 830vh;
-}
-.gallery-img {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  min-width: 100%;
-  height: 120vh;
-  object-fit: cover;
-  font-family: "object-fit: cover;";
-  opacity: calc(1.8 + var(--viewport-y));
-  transition: opacity 0.3s ease-in;
 }
 /* video gallery */
 .video-gallery {
