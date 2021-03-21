@@ -215,7 +215,7 @@ aside {
 }
 .photo-text {
   position: absolute;
-  top:0;
+  top:50vh;
   z-index: 5;
 }
 .offers {
