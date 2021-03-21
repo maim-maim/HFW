@@ -180,10 +180,14 @@
   }
   .offer1,
   .offer3 {
-    right: 0;
+    left: 0;
   }
   .sticky-texts h3 {
     font-size: 36px;
+    letter-spacing: 0;
+  }
+  .offers p {
+    letter-spacing: 0;
   }
   /* about */
   .about {
