@@ -1,1 +1,242 @@
 
+/* tablet */
+@media screen and (max-width: 1040px) {
+  .container {
+    width: 95%;
+  }
+  /* header */
+  /* humberger menu */
+  .side-bars {
+    width: 9em;
+    height: 100vh;
+    background: rgb(22, 22, 22);
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: -9em;
+    overflow-y: auto;
+    overflow-x: initial;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    transition: 0.3s ease;
+  }
+  .side-bars::-webkit-scrollbar {
+    display: none;
+  }
+  .open,
+  .close {
+    display: block;
+    position: fixed;
+    font-size: 1.6em;
+    width: 1em;
+    cursor: pointer;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 20;
+  }
+  .close {
+    right: -2em;
+    z-index: 25;
+  }
+  .nav {
+    position: initial;
+    padding-top: 10vh;
+    text-align: center;
+  }
+  .logo {
+    position: initial;
+  }
+  .pages {
+    position: initial;
+    display: flex;
+    flex-direction: column;
+    transform: none;
+    margin-top: 8vh;
+  }
+  .page {
+    margin-bottom: 2.5vh;
+    width: 10em;
+  }
+  .pages p,
+  .scroll-effect {
+    display: none;
+  }
+  .sns-bar {
+    position: absolte;
+    bottom: 2vw;
+    margin-left: 0.8em;
+  }
+  .sns-bar ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 8em;
+  }
+  .sns-bar li {
+    width: 40%;
+  }
+  .sns-bar a {
+    margin: 0.5em;
+  }
+  #menu:checked ~ .side-bars {
+    top: 0;
+    right: -0.1em;
+  }
+  #menu:checked ~ .close {
+    right: 0.5em;
+  }
+  /* header title */
+  .header-title h1 {
+    font-size: 60px;
+  }
+  .header-title h2 {
+    font-size: 20px;
+  }
+  /* works */
+  .offers h3 {
+    font-size: 60px;
+  }
+  .offers p {
+    font-size: 25px;
+  }
+  .sticky-texts h3 {
+    font-size: 46px;
+  }
+  button a {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1040px) and (max-height: 440px) {
+  .sns-bar {
+    position: static;
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  /* header */
+  .header-title h1 > br {
+    display: block;
+  }
+  .header-title h1 {
+    padding-bottom: 0.4em;
+  }
+  /* main */
+  .title-jp {
+    font-size: 3.5vw;
+  }
+  /* works */
+  .offers h3 {
+    font-size: 48px;
+  }
+  .offers p {
+    font-size: 20px;
+  }
+  /* about */
+  .introduction-text {
+    font-size: 14px;
+  }
+  /* contact */
+  .contact p,
+  textarea,
+  input {
+    font-size: 14px;
+  }
+  /* footer */
+  footer {
+    font-size: 12px;
+  }
+}
+
+/* smart phone */
+@media screen and (max-width: 600px) {
+  /* header */
+  .header-title h2 > br {
+    display: block;
+  }
+  .and-mark {
+    visibility: hidden;
+  }
+  .and {
+    display: block;
+    text-transform: lowercase;
+  }
+  .header-title h2 {
+    line-height: 0.9em;
+  }
+  /* main */
+  .title-en {
+    position: static;
+    line-height: 5.5vw;
+    text-align: center;
+  }
+  .title-jp {
+    font-size: 20px;
+  }
+  /* works */
+  .offers {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    right: 0;
+  }
+  .sticky-texts h3 {
+    font-size: 36px;
+  }
+  /* about */
+  .about {
+    padding: 36px 0;
+  }
+  .introduction {
+    flex-direction: row-reverse;
+    position: relative;
+  }
+  .profile-img {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 3.5vw;
+  }
+  .introduction-text {
+    width: 60%;
+    background: rgba(216, 231, 241, 0.8);
+    color: black;
+    padding: 15px;
+    position: relative;
+    z-index: 5;
+    top: 10vw;
+    left: 12vw;
+  }
+  /* contact */
+  .contact {
+    padding-top: 64px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  /* main */
+  .title {
+    padding: 0 0 36px;
+  }
+  /* works */
+  .offers h3 {
+    font-size: 36px;
+  }
+  /* contact */
+  .contact-form {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 385px) {
+    /* header */
+    .header-title h1 {
+      font-size: 40px;
+    }
+    .header-title h2 {
+      font-size: 16px;
+    }
+    /* main */
+    .title {
+      letter-spacing: 0.1em;
+    }
+  }
+}
