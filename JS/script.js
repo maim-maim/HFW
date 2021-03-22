@@ -6,6 +6,15 @@ ScrollOut({
 });
 
 $(function () {
+  // loading
+  $(window).on('load',function(){
+  var loading = function(){
+    $('.loading').fadeOut('fast');
+    $('.content').fadeIn('slow');
+  };
+  setTimeout(loading,2000);
+});
+
   // scroll
   $(".logo-link").click(function () {
     $("html, body").animate(
@@ -30,11 +39,15 @@ $(function () {
   // current nav
   const set = 300;
   let topTop = 0;
-  let worksTop = Math.round($("#works").offset().top);
-  let aboutTop = Math.round($("#about").offset().top);
-  let contactTop = Math.round($("#contact").offset().top);
-
-  $(window).on("scroll", function () {
+  let worksTop;
+  let aboutTop;
+  let contactTop;
+  $(window).on("resize load", function () {
+    worksTop = Math.round($("#works").offset().top);
+    aboutTop = Math.round($("#about").offset().top);
+    contactTop = Math.round($("#contact").offset().top);
+  });
+  $(window).on("scroll resize", function () {
     let scrollTop = $(window).scrollTop() + set;
     if (topTop <= scrollTop && scrollTop < worksTop) {
       $(".to-top").addClass("current").siblings("li").removeClass("current");
@@ -51,11 +64,14 @@ $(function () {
   });
 
   // video placeholder & scroll effect
-  let videoGalleryTop = $(".video-gallery").offset().top;
-  let noScrollEffect = $(".contact").offset().top;
-  let distance = 0;
-  $(document).scroll(function () {
-    distance = $(this).scrollTop();
+  let videoGalleryTop;
+  let noScrollEffect;
+  $(window).on("resize load", function () {
+    videoGalleryTop = Math.round($(".video-gallery").offset().top);
+    noScrollEffect = Math.round($(".contact").offset().top);
+  });
+  $(window).on("scroll resize", function () {
+    let distance = $(this).scrollTop();
     if (videoGalleryTop <= distance) {
       $(".left-placeholder").addClass("fade-out");
       $(".right-placeholder").addClass("fade-out");
