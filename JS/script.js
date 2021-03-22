@@ -8,11 +8,11 @@ ScrollOut({
 $(function () {
   // loading
   $(window).on('load',function(){
-  var loading = function(){
+//   var loading = function(){
     $('.loading').fadeOut('fast');
     $('.content').fadeIn('slow');
-  };
-  setTimeout(loading,2000);
+//   };
+//   setTimeout(loading,2000);
 });
 
   // scroll
