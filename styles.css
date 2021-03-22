@@ -40,7 +40,7 @@ a {
 }
 
 /* loading */
-.loading {
+/* .loading {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,7 +119,7 @@ a {
 }
 .main-content {
   display: none;
-}
+} */
 
 /* side bars */
 aside {
