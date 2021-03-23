@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
   <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="./styles.css"/>
-    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <link rel="stylesheet" href="./css/responsive.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@700&family=M+PLUS+1p:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"/>
@@ -14,15 +14,31 @@
     <title>High Five Works | Photography & Videography</title>
   </head>
   <body>
-<!--     <div class="loading">
+    <!-- <div class="loading">
       <span class="loader"><span class="loader-inner"></span></span>
       <p>loading...</p>
     </div> -->
+    <div class="main-content">
     <header id="top" class="wrapper">
-      <video class="cover-video" src="./images/background-video.mp4" autoplay loop muted playsinline></video>
+      <video class="cover-video"
+      src="./images/background-video.mp4"
+      autoplay
+      loop
+      muted
+      playsinline>
+      </video>
       <div class="header-title container">
         <h1>high</br> five</br> works</h1>
         <h2>photography</br> <span class="and-mark">&</span><span class="and">and</span></br> videography</h2>
+      </div>
+      <section class="wrapper intro-wrapper">
+        <div class="intro-text">
+          <h3>喜びを分かち合う</h3>
+          <p>「美しさ」「格好良さ」「楽しさ」は十人十色のイメージや表現方法があります。それぞれのイメージに合わせた最高の作品を一緒に造り上げます。最後には手のひらを思いきりたたき合わせて喜び合える関係を写真や映像を通して築きたい。</br>
+          <span>それがHIGH FIVE WORKSの想いです。</span>
+          </p>
+          <div class="text-box" data-scroll></div>
+        </div>
       </div>
     </header>
     <input id="menu" type="checkbox" />
@@ -81,73 +97,44 @@
     <main>
       <section id="works" class="works wrapper">
         <div class="photo-gallery">
-          <div class="photo-text container">
-            <div class="title" data-scroll>
-              <h1 class="title-en works-title">works</h1>
-              <h2 class="title-jp">事業内容</h4>
-            </div>
-            <div class="offers offer1"  data-scroll>
-              <h3>
-                photos
-              </h3>
-              <p>
-                イベント等の写真撮影
-              </p>
-            </div>
-            <div class="offers offer2"  data-scroll>
-              <h3>
-                videos
-              </h3>
-              <p>
-                YouTube動画撮影
-              </p>
-            </div>
-            <div class="offers offer3"  data-scroll>
-              <h3>
-                And more...
-              </h3>
-              <p>
-                その他、写真や動画に関してご相談ください！
-              </p>
+          <div class="sticky-image">
+          <img
+            class="gallery-img"
+            src="./images/photo1.jpg"
+            alt="photo"
+            data-scroll
+          />
+          </div>
+          <div class="container">
+            <div class="title works-title" data-scroll>
+              <h1 class="title-en works-entitle">works</h1>
+              <h2 class="title-jp">作品紹介</h4>
             </div>
           </div>
-          <div class="images">
-            <img
-            class="gallery-img"
-            src="./images/photo1.jpg"
-            alt="photo"
-            data-scroll
-          />
+          <div class="sticky-image">
             <img
             class="gallery-img"
             src="./images/photo2.jpg"
             alt="photo"
             data-scroll
           />
+          </div>
+          <div class="sticky-image">
             <img
             class="gallery-img"
             src="./images/photo3.jpg"
             alt="photo"
             data-scroll
-          />
-            <img
-            class="gallery-img"
-            src="./images/photo1.jpg"
-            alt="photo"
-            data-scroll
-          />
-            <img
-            class="gallery-img"
-            src="./images/photo2.jpg"
-            alt="photo"
-            data-scroll
-          />
-            <img
-            class="gallery-img"
-            src="./images/photo3.jpg"
-            alt="photo"
-            data-scroll
-          />
+          /></div>
+          <div class="gallery-texts photo-texts container">
+            <div class="sticky-texts" data-scroll>
+              <h3>写真作品</h3>
+              <button>
+              <a target="_blank" href="./photogallery.html"
+                  >もっと見る<i class="fas fa-chevron-right"></i
+                ></a>
+              </button>
+            </div>
           </div>
         </div>
         <div class="video-gallery">
@@ -156,7 +143,7 @@
             <div class="left-placeholder"></div>
             <div class="right-placeholder"></div>
           </div>
-          <div class="video-texts container">
+          <div class="gallery-texts container">
             <div class="sticky-texts" data-scroll>
               <h3>動画作品</h3>
               <button>
@@ -174,15 +161,16 @@
             <h1 class="title-en">about</h1>
             <h2 class="title-jp">High Five Worksについて</h2>
           </div>
-          <div class="introduction">
-            <p class="introduction-text">
-                静岡県富士市に拠点を...Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Optio, itaque pariatur culpa accusamus eius
-                reiciendis quia quos facilis dolore Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Sequi amet eaque ex quod vitae
-                incidunt, mollitia fuga et, sunt officiis quasi porro autem enim
-                id. Excepturi quidem saepe cumque facilis.
-              </p>
+          <div class="profile">
+            <p class="profile-text">
+              「写真にしか残らない思い出ならいらない」</br></br>
+              本当に大切な思い出は、色褪せることなく自分の中に残っていて、いつでも思い出せるもの。</br></br>
+              だから、写真や映像を残すことがあまり好きではありませんでした。</br></br>
+              でも、僕が尊敬する坂本龍馬さんの写真を見たとき、僕の生まれる前に生きていた人の顔が見れるなんてありがたいと感じ、写真への考えを改めました。</br></br>
+              お世話になった大切な人、これから出会う人、自分がいない未来の世代にその時その一瞬の思い出を伝えるための手段としてお力になります。</br></br>
+              写真は自己満足の世界です。</br>
+              そんな世界に他人を惹きつけるような作品を共に造ります。
+            </p>
             <img class="profile-img"
               src="./images/Profile.jpg" data-scroll
             />
@@ -231,6 +219,7 @@
         <p>&copy 2021 High Five Works</p>
       </div>
     </footer>
+    </div>
     <script src="./JS/script.js"></script>
     <script src="./JS/stickyfill.js"> </script>
     <script src="./JS/objectfit.js"></script>
