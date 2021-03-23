@@ -7,6 +7,7 @@ body {
   color: #ffffff;
   font-family: "Montserrat", "M PLUS 1p", sans-serif;
   background: black;
+  overflow: auto;
 }
 main,
 footer {
@@ -22,7 +23,7 @@ a {
 }
 .wrapper {
   width: 100%;
-  padding: 40px 0 36px;
+  padding-top: 40px;
 }
 .container {
   width: 80%;
@@ -39,8 +40,8 @@ a {
   display: none;
 }
 
-/* loading */
-/* .loading {
+/* loading
+.loading {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,12 +253,50 @@ aside {
   font-weight: normal;
   text-transform: capitalize;
 }
+/* intro */
+.intro-wrapper {
+  position: relative;
+  background: black;
+}
+.intro-text {
+  max-width: 610px;
+  margin: auto;
+  font-size: 24px;
+  text-align: left;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  padding: 30vh 0;
+}
+.intro-text h3 {
+  font-size: 68px;
+  line-height: 2em;
+  text-align: center;
+}
+.intro-text span {
+  font-weight: bold;
+  font-size: 28.5px;
+}
+.text-box {
+  position: absolute;
+  top: 30vh;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  --percentage-one: calc(200% * var(--viewport-y));
+  --percentage-two: calc(100% * var(--visible-y));
+  background-image: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 0) var(--percentage-one),
+    rgb(0, 0, 0) var(--percentage-two)
+  );
+}
 
 /* main */
 /* title */
 .title {
   padding: 6vw 0;
-  opacity: calc(0.9 + var(--viewport-y));
+  opacity: 1;
+  opacity: calc(1 + var(--viewport-y));
 }
 .title-en {
   font-size: 20vw;
@@ -267,12 +306,8 @@ aside {
   line-height: 7vw;
   text-align: left;
   position: relative;
-  left: -0.8em;
-  letter-spacing: 5px;
-}
-.works-title {
   left: -0.7em;
-  padding-top: 50px;
+  letter-spacing: 5px;
 }
 .title-jp {
   font-weight: normal;
@@ -283,52 +318,66 @@ aside {
 /* works */
 /* photo gallery */
 .photo-gallery {
-  position: relative;
-  height: 730vh;
+  height: 550vh;
 }
-.photo-text {
-  position: relative;
-  z-index: 5;
-}
-.offers {
-  width: 50%;
-  text-align: left;
-  position: relative;
-  padding-top: 60vh;
-  /* background-image: linear-gradient(
-    160deg,
-    rgba(0, 0, 0, 0) -100%,
-    rgb(0, 0, 0) 0%
-  ); */
-}
-.offer1,
-.offer3 {
-  right: -50%;
-}
-.offers h3 {
-  font-size: 80px;
-  text-transform: capitalize;
-  letter-spacing: 0.06em;
-  padding-bottom: 0.2em;
-}
-.offers p {
-  font-size: 40px;
-  letter-spacing: 0.08em;
-}
-.images {
-  position: absolute;
+.sticky-image {
+  position: sticky;
   top: 0;
 }
 .gallery-img {
-  position: sticky;
-  top: 0;
   width: 100%;
-  min-width: 100%;
   height: 120vh;
   object-fit: cover;
   font-family: "object-fit: cover;";
-  opacity: calc(1.8 + var(--viewport-y));
-  transition: opacity 0.3s ease-in;
+  opacity: calc(1.6 + var(--viewport-y));
+}
+.works-title {
+  position: relative;
+  z-index: 5;
+  top: -40vh;
+  padding-bottom: 40vh;
+}
+.works-entitle {
+  left: -0.7em;
+}
+.gallery-texts {
+  height: 157vh;
+  color: black;
+}
+.photo-texts {
+  height: 115vh;
+  position: relative;
+  top: -60vh;
+  z-index: 5;
+}
+.sticky-texts {
+  position: sticky;
+  top: 45%;
+  z-index: 10;
+  opacity: calc(1.1 + var(--viewport-y));
+}
+.sticky-texts h3 {
+  padding-bottom: 0.2em;
+  font-size: 56px;
+}
+button {
+  background: transparent;
+  border-radius: 30px;
+  border: black solid 1px;
+  font-size: 1em;
+  font-family: "Montserrat", "M PLUS 1p", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+button a {
+  color: black;
+  display: block;
+  padding: 0.4em 0.6em;
+}
+button:hover {
+  background: rgba(32, 32, 32, 0.5);
+}
+.fa-chevron-right {
+  padding-left: 0.6em;
 }
 /* video gallery */
 .video-gallery {
@@ -360,9 +409,9 @@ aside {
   right: 0;
 }
 .fade-out {
-  animation: fadeOut 0.8s ease forwards;
+  animation: fade 0.8s ease forwards;
 }
-@keyframes fadeOut {
+@keyframes fade {
   0% {
     width: 20vw;
   }
@@ -370,48 +419,13 @@ aside {
     width: 0;
   }
 }
-.video-texts {
-  width: 100%;
-  height: 157vh;
-  color: black;
-}
-.sticky-texts {
-  position: sticky;
-  top: 45%;
-  z-index: 10;
-  opacity: calc(1 + var(--viewport-y));
-  transition: opacity 0.5s ease-in;
-}
-.sticky-texts h3 {
-  padding-bottom: 0.2em;
-  font-size: 56px;
-}
-button {
-  background: transparent;
-  border-radius: 30px;
-  border: black solid 1px;
-  font-size: 1em;
-  font-family: "Montserrat", "M PLUS 1p", sans-serif;
-  transition: 0.3s ease-in-out;
-}
-button a {
-  color: black;
-  display: block;
-  padding: 0.4em 0.6em;
-}
-button:hover {
-  background: rgba(32, 32, 32, 0.5);
-}
-.fa-chevron-right {
-  padding-left: 0.6em;
-}
 
 /* about */
-.introduction {
+.profile {
   display: flex;
   justify-content: space-around;
 }
-.introduction-text {
+.profile-text {
   width: 45%;
   text-align: left;
   line-height: 2em;
@@ -433,7 +447,6 @@ button:hover {
   padding: 8px;
   outline: none;
   border: none;
-  border-radius:0;
   border-bottom: white solid 1px;
   margin-bottom: 10px;
   background: rgb(0, 0, 0);
