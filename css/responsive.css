@@ -92,12 +92,6 @@
     font-size: 20px;
   }
   /* works */
-  .offers h3 {
-    font-size: 60px;
-  }
-  .offers p {
-    font-size: 25px;
-  }
   .sticky-texts h3 {
     font-size: 46px;
   }
@@ -105,6 +99,7 @@
     font-size: 13px;
   }
 }
+
 @media screen and (max-width: 1040px) and (max-height: 440px) {
   .sns-bar {
     position: static;
@@ -120,19 +115,28 @@
   .header-title h1 {
     padding-bottom: 0.4em;
   }
+  .intro-text {
+    max-width: 500px;
+    font-size: 20px;
+    padding: 15vh 0;
+  }
+  .intro-text h3 {
+    font-size: 60px;
+  }
+  .intro-text span {
+    font-size: 24px;
+  }
+  .text-box {
+    top: 15vh;
+    height: 68%;
+    --percentage-two: calc(110% * var(--visible-y));
+  }
   /* main */
   .title-jp {
     font-size: 3.5vw;
   }
-  /* works */
-  .offers h3 {
-    font-size: 48px;
-  }
-  .offers p {
-    font-size: 20px;
-  }
   /* about */
-  .introduction-text {
+  .profile-text {
     font-size: 14px;
   }
   /* contact */
@@ -163,6 +167,17 @@
   .header-title h2 {
     line-height: 0.9em;
   }
+  .intro-text {
+    max-width: 420px;
+    font-size: 16px;
+    padding: 10vh 0;
+  }
+  .intro-text h3 {
+    font-size: 46px;
+  }
+  .intro-text span {
+    font-size: 20px;
+  }
   /* main */
   .title-en {
     position: static;
@@ -173,45 +188,35 @@
     font-size: 20px;
   }
   /* works */
-  .offers {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-  }
-  .offer1,
-  .offer3 {
-    left: 0;
-  }
   .sticky-texts h3 {
     font-size: 36px;
-    letter-spacing: 0;
-  }
-  .offers p {
     letter-spacing: 0;
   }
   /* about */
   .about {
     padding: 36px 0;
   }
-  .introduction {
+  /* .profile {
     flex-direction: row-reverse;
     position: relative;
-  }
+  } */
   .profile-img {
-    width: 50%;
+    /* width: 50%;
     position: absolute;
     top: 0;
-    left: 3.5vw;
+    left: 3.5vw; */
+    display: none;
   }
-  .introduction-text {
-    width: 60%;
+  .profile-text {
+    /* width: 60%;
     background: rgba(216, 231, 241, 0.8);
     color: black;
     padding: 15px;
     position: relative;
     z-index: 5;
     top: 10vw;
-    left: 12vw;
+    left: 12vw; */
+    width: 90%;
   }
   /* contact */
   .contact {
@@ -220,13 +225,25 @@
 }
 
 @media screen and (max-width: 460px) {
+  /* intro */
+  .intro-text {
+    max-width: 95%;
+    padding: 8vh 0;
+    letter-spacing: 1px;
+  }
+  .intro-text h3 {
+    font-size: 34px;
+  }
+  .intro-text span {
+    font-size: 16px;
+  }
+  .text-box {
+    top: 8vh;
+    height: 90%;
+  }
   /* main */
   .title {
     padding: 0 0 36px;
-  }
-  /* works */
-  .offers h3 {
-    font-size: 36px;
   }
   /* contact */
   .contact-form {
