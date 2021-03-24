@@ -261,6 +261,9 @@
   .title {
     padding: 0 0 36px;
   }
+  .title-jp {
+    letter-spacing: 0.2em;
+  }
   /* contact */
   .contact-form {
     width: 90%;
