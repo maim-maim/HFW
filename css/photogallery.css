@@ -115,6 +115,7 @@ li {
   width: 100%;
   opacity: 1;
   opacity: calc(var(--visible-y) * var(--visible-y));
+  will-change:transform;
   transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
 }
 
