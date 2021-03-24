@@ -462,11 +462,11 @@ button:hover {
   padding: 8px;
   outline: none;
   border: none;
-  border-radius: ;
+  border-radius: 0;
   border-bottom: white solid 1px;
   margin-bottom: 10px;
   background: rgb(0, 0, 0);
-  box-shadow: 0 0 0 400px black inset;
+  box-shadow: 0 0 0 1000px black inset;
   -webkit-text-fill-color: white;
   caret-color: white;
 }
