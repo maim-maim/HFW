@@ -38,17 +38,16 @@
     right: -2em;
     z-index: 25;
   }
-  .nav {
-    position: initial;
+  .nav-bar {
+    position: static;
     padding-top: 10vh;
     text-align: center;
   }
   .logo {
-    position: initial;
+    position: static;
   }
   .pages {
-    position: initial;
-    display: flex;
+    position: static;
     flex-direction: column;
     transform: none;
     margin-top: 8vh;
@@ -283,3 +282,4 @@
     letter-spacing: 0;
   }
 }
+
