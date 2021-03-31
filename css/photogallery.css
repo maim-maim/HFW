@@ -6,10 +6,13 @@
 }
 body {
   -webkit-overflow-scrolling: touch;
-  background: black;
+  background: #0a0d0d;
 }
 li {
   list-style: none;
+}
+a {
+  text-decoration: none;
 }
 
 /* loading */
@@ -27,7 +30,7 @@ li {
   z-index: 200;
 }
 .loading p {
-  color: rgb(4, 0, 20);
+  color: #f9af3c;
   padding: 24px 0 0 16px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -37,14 +40,14 @@ li {
   width: 30px;
   height: 30px;
   position: relative;
-  border: 4px solid rgb(4, 0, 20);
+  border: 4px solid #f9af3c;
   animation: loader 2s infinite ease;
 }
 .loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: rgb(4, 0, 20);
+  background-color: #f9af3c;
   animation: loader-inner 2s infinite ease-in;
 }
 @keyframes loader {
@@ -94,6 +97,30 @@ li {
   display: none;
 }
 
+/* button */
+.back-to-home {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 5;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+.back-to-home a {
+  color: white;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+.fa-home {
+  font-size: 20px;
+}
+.to-home-text {
+  font-size: 12px;
+}
+
 /* gallery */
 .photo-container {
   width: 80%;
@@ -115,7 +142,6 @@ li {
   width: 100%;
   opacity: 1;
   opacity: calc(var(--visible-y) * var(--visible-y));
-  will-change:transform;
   transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
 }
 
