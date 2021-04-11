@@ -4,7 +4,8 @@ ScrollOut({
     visibleY: true,
   },
 });
-// loading
+
+// loading page
 $(window).on("load", function () {
   $(".loading").fadeOut();
   $(".main-content").fadeIn();
@@ -12,14 +13,14 @@ $(window).on("load", function () {
 
 $(function () {
   // disable right click
-  $("body").bind("contextmenu", function () {
-    return false;
-  });
-  $("body").mousedown(function () {
-    return false;
-  });
+  // $("body").bind("contextmenu", function () {
+  //   return false;
+  // });
+  // $("body").mousedown(function () {
+  //   return false;
+  // });
 
-  // scroll
+  // smooth scroll
   $(".logo-link").click(function () {
     $("html, body").animate(
       {
@@ -38,74 +39,45 @@ $(function () {
       },
       500
     );
-
     return false;
   });
 
-  // current nav
-  const set = 300;
-  let topTop = 0;
-  let worksTop;
-  let aboutTop;
-  let contactTop;
-  $(window).on("resize load", function () {
-    worksTop = Math.round($("#works").offset().top);
-    aboutTop = Math.round($("#about").offset().top);
-    contactTop = Math.round($("#contact").offset().top);
-  });
-  $(window).on("scroll resize", function () {
-    let scrollTop = $(window).scrollTop() + set;
-    if (topTop <= scrollTop && scrollTop < worksTop) {
+  $(window).on("scroll resize load", function () {
+    // current nav
+    const set = 300;
+    let topTop = 0;
+    let worksTop = Math.round($("#works").offset().top);
+    let aboutTop = Math.round($("#about").offset().top);
+    let contactTop = Math.round($("#contact").offset().top);
+    let navScrollTop = $(window).scrollTop() + set;
+    if (topTop <= navScrollTop && navScrollTop < worksTop) {
       $(".to-top").addClass("current").siblings("li").removeClass("current");
-    } else if (worksTop <= scrollTop && scrollTop < aboutTop) {
+    } else if (worksTop <= navScrollTop && navScrollTop < aboutTop) {
       $(".to-works").addClass("current").siblings("li").removeClass("current");
-    } else if (aboutTop <= scrollTop && scrollTop < contactTop) {
+    } else if (aboutTop <= navScrollTop && navScrollTop < contactTop) {
       $(".to-about").addClass("current").siblings("li").removeClass("current");
-    } else if (contactTop <= scrollTop) {
+    } else if (contactTop <= navScrollTop) {
       $(".to-contact")
         .addClass("current")
         .siblings("li")
         .removeClass("current");
     }
-  });
 
-  $(window).on("resize load", function () {
-    imgTwoTop = Math.round($(".wrapper").offset().top) + 900;
-    imgThreeTop = Math.round($(".wrapper").offset().top) + 2100;
-  });
-  $(window).on("scroll resize", function () {
-    let scrollTop = $(window).scrollTop() + 1;
-    if (0 <= scrollTop && scrollTop <= imgTwoTop) {
+    // photo slide
+    let imgTwoTop = Math.round($(".photo-gallery").offset().top) + 900;
+    let imgThreeTop = Math.round($(".photo-gallery").offset().top) + 2100;
+    let videoGalleryTop = Math.round($(".video-gallery").offset().top);
+    let noScrollEffect = Math.round($(".contact").offset().top);
+    let slideScrollTop = $(window).scrollTop() + 1;
+    if (0 <= slideScrollTop && slideScrollTop <= imgTwoTop) {
       $(".image1").addClass("active").siblings("li").removeClass("active");
-    } else if (imgTwoTop < scrollTop && scrollTop <= imgThreeTop) {
+    } else if (imgTwoTop < slideScrollTop && slideScrollTop <= imgThreeTop) {
       $(".image2").addClass("active").siblings("li").removeClass("active");
-    } else if (imgThreeTop < scrollTop) {
-      $(".image3").addClass("active").siblings("li").removeClass("active");
-    }
-  });
-
-  // video placeholder & scroll effect
-  let imgTwoTop;
-  let imgThreeTop;
-  let videoGalleryTop;
-  let noScrollEffect;
-  $(window).on("resize load", function () {
-    imgTwoTop = Math.round($(".photo-gallery").offset().top) + 900;
-    imgThreeTop = Math.round($(".photo-gallery").offset().top) + 2100;
-    videoGalleryTop = Math.round($(".video-gallery").offset().top);
-    noScrollEffect = Math.round($(".contact").offset().top);
-  });
-
-  $(window).on("scroll resize load", function () {
-    let scrollTop = $(window).scrollTop() + 1;
-    if (0 <= scrollTop && scrollTop <= imgTwoTop) {
-      $(".image1").addClass("active").siblings("li").removeClass("active");
-    } else if (imgTwoTop < scrollTop && scrollTop <= imgThreeTop) {
-      $(".image2").addClass("active").siblings("li").removeClass("active");
-    } else if (imgThreeTop < scrollTop) {
+    } else if (imgThreeTop < slideScrollTop) {
       $(".image3").addClass("active").siblings("li").removeClass("active");
     }
 
+    // video placeholder
     let distance = $(this).scrollTop();
     if (videoGalleryTop <= distance) {
       $(".left-placeholder").addClass("fade-out");
@@ -114,6 +86,8 @@ $(function () {
       $(".left-placeholder").removeClass("fade-out");
       $(".right-placeholder").removeClass("fade-out");
     }
+
+    // scroll effect
     if (noScrollEffect <= distance) {
       $(".scroll-effect").addClass("no-scroll-effect");
     } else {
@@ -122,9 +96,9 @@ $(function () {
   });
 
   // polyfill
-  const imageFit = $(".cover-video, .gallery-img, .sticky-video, .profile-img");
+  const imageFit = $(".slide-photo, .profile-img");
   objectFitImages(imageFit);
 
-  const elements = $(".sticky-image, .sticky-video, .sticky-texts");
+  const elements = $(".images, .sticky-video, .sticky-texts");
   Stickyfill.add(elements);
 });
