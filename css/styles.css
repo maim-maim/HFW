@@ -19,7 +19,6 @@ li {
 }
 a {
   text-decoration: none;
-  color: white;
 }
 .wrapper {
   width: 100%;
@@ -127,7 +126,7 @@ a {
 
 /* ---------side bars--------- */
 aside {
-  z-index: 20;
+  z-index: 200;
   position: fixed;
 }
 
@@ -141,6 +140,7 @@ aside {
 .sns-bar a {
   display: block;
   margin: 1em;
+  color: white;
 }
 
 .fab:hover {
@@ -187,6 +187,7 @@ aside {
   display: block;
   padding: 0.5em;
   text-transform: capitalize;
+  color: white;
 }
 
 .current {
@@ -242,19 +243,28 @@ aside {
 }
 
 /* --------header-------- */
+.cover-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
 .cover-video {
   position: fixed;
   top: 0;
   left: 0;
   object-fit: cover;
-  /* font-family: "object-fit: cover;"; */
-  height: 100vh;
+  height: 100%;
   width: 100%;
   z-index: -50;
 }
 
 /* header title */
 .header-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -276,7 +286,19 @@ aside {
 
 /* intro text */
 .intro-wrapper {
+  position: relative;
   padding: 30vh 0;
+}
+
+.intro-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #0a0d0d, transparent);
+  z-index: 100;
 }
 
 .intro-text {
@@ -343,10 +365,15 @@ aside {
 }
 
 /* ----------works----------- */
-.works-title {
+.works {
   position: relative;
+}
+
+.works-title {
+  position: absolute;
   z-index: 5;
-  top: -85vh;
+  top: 20vh;
+  min-width: 100%;
 }
 
 .works-entitle {
@@ -375,12 +402,14 @@ aside {
   opacity: 0;
   pointer-events: none;
   transition: all 500ms;
+  min-width: 100%;
 }
 
-.img > img {
+.slide-photo {
   width: 100%;
   height: 100vh;
   object-fit: cover;
+  font-family: "object-fit: cover";
 }
 
 .image3 {
@@ -393,6 +422,9 @@ aside {
   left: 0;
   width: 100%;
   text-align: center;
+}
+
+.gallery-texts {
   color: #0a0d0d;
 }
 
@@ -401,22 +433,22 @@ aside {
   font-size: 56px;
 }
 
-button {
+.button {
+  display: inline-block;
   background: transparent;
   border-radius: 30px;
   border: #0a0d0d solid 1px;
   font-size: 1em;
-  font-family: "Montserrat", "M PLUS 1p", sans-serif;
   transition: 0.3s ease-in-out;
 }
 
-button a {
-  color: #0a0d0d;
+.button a {
   display: block;
   padding: 0.4em 0.6em;
+  color: #0a0d0d;
 }
 
-button:hover {
+.button:hover {
   background: rgba(32, 32, 32, 0.5);
 }
 
@@ -440,11 +472,15 @@ button:hover {
   top: 0;
 }
 
-.sticky-video video {
+.gallery-video-container {
   width: 100%;
   height: 100vh;
+}
+
+.slide-video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  font-family: "object-fit: cover;";
   position: relative;
 }
 
@@ -484,7 +520,6 @@ button:hover {
   position: sticky;
   top: 45vh;
   opacity: calc(1.1 + var(--viewport-y));
-  color: #0a0d0d;
 }
 
 /* --------about---------- */
@@ -502,7 +537,7 @@ button:hover {
 .profile-img {
   width: 45%;
   object-fit: cover;
-  font-family: "object-fit: cover;";
+  font-family: "object-fit: cover; object-position:top;";
   transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
 }
 
@@ -524,6 +559,7 @@ button:hover {
   box-shadow: 0 0 0 400px #0a0d0d inset;
   -webkit-text-fill-color: white;
   caret-color: white;
+  color: white;
 }
 
 .submit-btn {
@@ -544,7 +580,7 @@ button:hover {
 
 /* ---------------footer------------ */
 footer {
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(110, 110, 110, 0.8);
   padding: 36px 0;
 }
